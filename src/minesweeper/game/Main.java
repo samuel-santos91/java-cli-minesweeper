@@ -25,23 +25,29 @@ public class Main {
 	            
 	            switch (userInput) {
 	                case "1":
-	                    GameGrid grid1 = new GameGrid(10, 10, 10);
+	                    GameGrid grid1 = new GameGrid(10, 10);
+	                    BombGrid grid2 = new BombGrid(10, 10, 10);
 	                    grid1.generateGrid();
-	                    grid1.placeRandomBombs();
 	                    grid1.printGrid();
-	                    break;
-	                case "2":
-	                    GameGrid grid2 = new GameGrid(12, 12, 30);
 	                    grid2.generateGrid();
 	                    grid2.placeRandomBombs();
 	                    grid2.printGrid();
+	                    grid1.printGrid();
+	                    grid2.printGrid();
+	                
 	                    break;
-	                case "3":
-	                    GameGrid grid3 = new GameGrid(15, 15, 50);
-	                    grid3.generateGrid();
-	                    grid3.placeRandomBombs();
-	                    grid3.printGrid();
-	                    break;
+//	                case "2":
+//	                    GameGrid grid2 = new GameGrid(12, 12, 30);
+//	                    grid2.generateGrid();
+//	                    grid2.placeRandomBombs();
+//	                    grid2.printGrid();
+//	                    break;
+//	                case "3":
+//	                    GameGrid grid3 = new GameGrid(15, 15, 50);
+//	                    grid3.generateGrid();
+//	                    grid3.placeRandomBombs();
+//	                    grid3.printGrid();
+//	                    break;
 	            }
 	            
 	            if ("Q".equals(userInput)) {
