@@ -7,6 +7,8 @@ public class GridBlock {
 		int bombCount = 0;
 		int numRows = grid.length;
 	    int numColumns = grid[0].length;
+	    
+	    	if(grid[row][column].equals("[x]")) return -1;
 	
       		for (int r = -1; r <= 1; r++) {
 	            for (int c = -1; c <= 1; c++) {
