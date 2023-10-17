@@ -27,7 +27,7 @@ public class GameGrid {
     	 System.out.print("   "); 
     	
     	for (int i = 0; i < columns; i++) {
-            char label = (char) ('a' + i);
+    		char label = (char) ('A' + i);
             System.out.print(" " + label + " ");
         }
         System.out.println();
@@ -45,4 +45,12 @@ public class GameGrid {
             System.out.println();
         }
     }
+    
+	public String[][] getGrid() {
+		return this.grid;
+	}
+	
+	public void setGrid(int row, int column, int numOfBombs) {
+		grid[row][column] = String.format("[%s]", String.valueOf(numOfBombs)) ;
+	}
 }

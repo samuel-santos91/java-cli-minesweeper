@@ -25,15 +25,28 @@ public class Main {
 	            
 	            switch (userInput) {
 	                case "1":
-	                    GameGrid grid1 = new GameGrid(10, 10);
-	                    BombGrid grid2 = new BombGrid(10, 10, 10);
-	                    grid1.generateGrid();
-	                    grid1.printGrid();
+//	                    GameGrid grid1 = new GameGrid(20, 20);
+	                    BombGrid grid2 = new BombGrid(10, 10, 50);
+//	                    grid1.generateGrid();
+//	                    grid1.printGrid();
+//	                    grid2.generateGrid();
+//	                    grid2.placeRandomBombs();
+//	                    grid2.printGrid();
+//	                    grid1.printGrid();
+//	                    grid2.printGrid();
 	                    grid2.generateGrid();
 	                    grid2.placeRandomBombs();
 	                    grid2.printGrid();
-	                    grid1.printGrid();
+	                    
+	                    
+	                    int num = GridBlock.checkAdjacentBlocks(grid2.getGrid(), 5, 6);
+	                    grid2.setGrid(5, 6, num);
 	                    grid2.printGrid();
+	                   
+	                    
+	                    
+	                    
+	                    
 	                
 	                    break;
 //	                case "2":
