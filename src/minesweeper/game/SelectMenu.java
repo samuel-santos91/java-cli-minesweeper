@@ -4,66 +4,40 @@ import java.util.ArrayList;
 
 public class SelectMenu {
 
-	public static ArrayList<GameGrid> menu(String userInput) {
-		
-		 ArrayList<GameGrid> grids = new ArrayList<GameGrid>();
-		 GameGrid displayGrid = null;
-		 BombGrid bombGrid = null; 
-		
-	      switch (userInput) {
-	        case "1":
-	          GameGrid displayGridEasy = new GameGrid(10, 10);
-	          displayGridEasy.generateGrid();
-	          displayGridEasy.printGrid();
+  public static ArrayList<GameGrid> menu(String userInputLevel) {
+	  
+    ArrayList<GameGrid> grids = new ArrayList<GameGrid>();
+    GameGrid displayGrid = null;
+    BombGrid bombGrid = null;
 
-	          BombGrid bombGridEasy = new BombGrid(10, 10, 10);
-	          bombGridEasy.generateGrid();
-	          bombGridEasy.placeRandomBombs();
+    switch (userInputLevel) {
+      case "1":
+        displayGrid = new GameGrid(10, 10);
+        bombGrid = new BombGrid(10, 10, 10);
+        break;
+        
+      case "2":
+        displayGrid = new GameGrid(12, 12);
+        bombGrid = new BombGrid(12, 12, 30);
+        break;
+        
+      case "3":
+        displayGrid = new GameGrid(15, 15);
+        bombGrid = new BombGrid(15, 15, 50);
+        break;
+    }
 
-	          displayGrid = displayGridEasy;
-	          bombGrid = bombGridEasy;
-	          
-	          grids.add(displayGrid);
-	          grids.add(bombGrid);
+    if (displayGrid != null && bombGrid != null) {
+      displayGrid.generateGrid();
+      displayGrid.printGrid();
+      
+      bombGrid.generateGrid();
+      bombGrid.placeRandomBombs();
 
-	          break;
-	        case "2":
-	          GameGrid displayGridNormal = new GameGrid(12, 12);
-	          displayGridNormal.generateGrid();
-	          displayGridNormal.printGrid();
+      grids.add(displayGrid);
+      grids.add(bombGrid);
+    }
 
-	          BombGrid bombGridNormal = new BombGrid(12, 12, 30);
-	          bombGridNormal.generateGrid();
-	          bombGridNormal.placeRandomBombs();
-
-	          displayGrid = displayGridNormal;
-	          bombGrid = bombGridNormal;
-	          
-	          grids.add(displayGrid);
-	          grids.add(bombGrid);
-
-	          break;
-	        case "3":
-	          GameGrid displayGridHard = new GameGrid(15, 15);
-	          displayGridHard.generateGrid();
-	          displayGridHard.printGrid();
-
-	          BombGrid bombGridHard = new BombGrid(15, 15, 50);
-	          bombGridHard.generateGrid();
-	          bombGridHard.placeRandomBombs();
-
-	          displayGrid = displayGridHard;
-	          bombGrid = bombGridHard;
-	          
-	          grids.add(displayGrid);
-	          grids.add(bombGrid);
-	          
-	          break;
-	        default:
-	          InterfaceUtils.invalidInputFormatScreen();
-	          break;
-	      }
-	      
-	      return grids;
-	}
+    return grids;
+  }
 }
