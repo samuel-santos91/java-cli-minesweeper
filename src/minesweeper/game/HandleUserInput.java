@@ -50,6 +50,11 @@ public class HandleUserInput {
             columnPosition,
             numOfBombsAround
           );
+          bombGrid.setGrid(
+	        rowPosition - 1,
+	        columnPosition,
+	        numOfBombsAround
+	      );
           displayGrid.printGrid();
           return;
         }

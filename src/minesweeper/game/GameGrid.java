@@ -43,6 +43,17 @@ public class GameGrid {
       System.out.println();
     }
   }
+  
+  public static boolean isGridFullyCompleted(String[][] grid) {	
+	for (int i = 0; i < grid.length; i++) {
+	  for (int j = 0; j < grid[i].length; j++) {
+	    if(grid[i][j] == "[ ]") {
+	    	return false;
+	    }
+	  }
+	}
+	return true;
+  }
 
   public String[][] getGrid() {
     return this.grid;

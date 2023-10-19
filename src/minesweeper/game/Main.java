@@ -35,6 +35,11 @@ public class Main {
         while (
           !"q".equals(userInputCoordinates) && !HandleUserInput.isGameOver()
         ) {
+          if(GameGrid.isGridFullyCompleted(bombGrid.getGrid())) {
+        	  InterfaceUtils.winnerScreen();
+        	  break;
+          }
+        	
           InterfaceUtils.instructionsScreen();
 
           userInputCoordinates = scanner.next();

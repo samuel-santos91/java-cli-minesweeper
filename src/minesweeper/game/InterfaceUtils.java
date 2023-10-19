@@ -47,6 +47,13 @@ public class InterfaceUtils {
     System.out.println("Invalid input format");
     System.out.println();
   }
+  
+  public static void winnerScreen() {
+    System.out.println();
+    System.out.println("          *** CONGRATULATIONS ***");
+    System.out.println("          ****** YOU WON!!! *****");
+    System.out.println();
+  }
 
   public static void gameOverScreen() {
     System.out.println();
