@@ -19,8 +19,8 @@ public class Main {
       ArrayList<GameGrid> grids = SelectMenu.menu(userInputLevel);
       
       if (!grids.isEmpty()) {
-          displayGrid = grids.get(0);
-          bombGrid = grids.get(1);
+          displayGrid = grids.get(0); //display grid
+          bombGrid = grids.get(1); //bomb grid
       } else {
           InterfaceUtils.invalidInputFormatScreen();
       }

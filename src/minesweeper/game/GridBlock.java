@@ -7,6 +7,7 @@ public class GridBlock {
     int numRows = grid.length;
     int numColumns = grid[0].length;
 
+    //If there is a bomb on the block, it will return -1
     if (grid[row][column].equals("[x]")) return -1;
 
     for (int r = -1; r <= 1; r++) {
